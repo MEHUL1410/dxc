@@ -1,0 +1,52 @@
+<html>
+    <head>
+            <script type= "text/javascript">
+        function a()
+        {
+          var username = document.getElementById("b").value;
+          var password = document.getElementById("c").value;
+          var errormessage1 = document.getElementById("errormessage1");
+          var errormessage2 = document.getElementById("errormessage2");
+          var done = document.getElementById("done")
+
+          if (username.length == 0){
+              errormessage1.innerHTML = "<font color = blue>username is required</font> "
+          }
+          else
+           {
+               errormessage1.innerHTML = " "
+           }
+           if (password.length == 0)
+           {
+               errormessage2.innerHTML = "<font color = blue>enter password</font>"
+           }
+            else  if (password.length <=5 || password.length >= 12 )
+           {
+               errormessage2.innerHTML = "<font color = blue>password should be between 6 & 12</font> "
+           }
+           else if (password.charAt(0)!= "A")
+            {
+                errormessage2.innerHTML = "<font color = blue>password should start with A</font>"
+            }
+            else 
+            {
+                errormessage2.innerHTML = " "
+               done.innerHTML = "congrats "
+            }
+
+        }
+       </script>
+    </head>
+    <body>
+        <h1 align = "center"> Login </h1>
+        <form align = "center">
+           username : <input type = "text" name = "b" id = "b"><span id = "errormessage1"></span>
+        </br>
+           password : <input type = "password" name = "c" id = "c"><span id = "errormessage2"></span>
+        </br>
+           <input type = "button" value= "submit" onclick="a()">
+           <div id= "done"></div>
+        </form>
+    </body>
+    
+</html>
